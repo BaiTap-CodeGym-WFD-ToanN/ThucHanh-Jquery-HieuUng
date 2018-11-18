@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hide It !</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<script src="jquery-3.3.1.min.js"></script>
+<div style="text-align: center; margin: 30px auto; border: solid 1px; width: 50%">
+    <p>click to hide this</p>
+</div>
+<script>
+    $(function () {
+        $("p").on("click", function (evt) {
+            evt.preventDefault();
+            $(this).hide();
+            $("<button id='button'>show</button>").appendTo("div");
+        });
+        $(document).on("click", "button", function () {
+            $(this).hide();
+            $("p").show();
+        });
+    });
+</script>
+</body>
+</html>
